@@ -48,6 +48,16 @@ header .nav-btn {
 	font-size: 1.8rem;
 }
 
+nav a.active {
+	border: #fff;
+	border-radius: 5px;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: bold;
+	/* color: var(--highlightColor); */
+	padding-inline: 5px;
+}
+
 @media only screen and (max-width: 1024px) {
 	header .nav-btn {
 		visibility: visible;
