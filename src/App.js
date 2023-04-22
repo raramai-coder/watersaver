@@ -19,7 +19,7 @@ function App() {
 				<Route path="faq" element={<FAQ />}></Route>
 				<Route path="report" element={<Report />}></Route>
 				<Route path="levels" element={<Levels />}></Route>
-				<Route path="language" element={<LanguageSelector />}></Route>
+				{/* <Route path="language" element={<LanguageSelector />}></Route> */}
 			</Routes>
 		</>
 	);
