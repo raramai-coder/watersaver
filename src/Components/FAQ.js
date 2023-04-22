@@ -41,7 +41,7 @@ const FAQ = () => {
     {
       question: "Can I filter water at my home?",
       answers: [
-        "There are several types of water filtration systems available such as ones can be installed to fit directly on the faucet and filter tap water, ones that be installed under the sink and other ones that can filter whole-house water. Lastly pitcher filters can also be used to filter tap water",
+        "There are several types of water filtration systems available such as ones that can be installed to fit directly on the faucet and filter tap water, ones that be installed under the sink and other ones that can filter whole-house water. Lastly pitcher filters can also be used to filter tap water",
       ],
       },
 
