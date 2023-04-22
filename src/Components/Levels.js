@@ -35,7 +35,7 @@ function Levels() {
 				copyData.push(dam);
 				//setDams(result.data);
 				setDams(copyData);
-				//console.log(dams);
+				console.log(dams);
 				//dams.append(result);
 				//dams = result;
 				//console.log(dams);
@@ -55,7 +55,7 @@ function Levels() {
 	getCsvData();
 
 	const { isLoaded } = useJsApiLoader({
-		googleMapsApiKey: process.env.NEXT_PUBLIC_MAP_API_KEY,
+		googleMapsApiKey: "AIzaSyDCD9_1XslaAhMLCX6EWnbD2TNGCaBINEE",
 		libraries: libraries,
 	});
 
@@ -74,11 +74,21 @@ function Levels() {
 						mapContainerStyle={{ width: "100%", height: "100%" }}
 					>
 						{/* <Marker position={center} /> */}
-						{dams.map((lat, lng) => (
+						{/* {dams.map((lat, lng) => (
+							
 							<Marker
 								position={{ lat: parseFloat(lat), lng: parseFloat(lng) }}
 							/>
-						))}
+						))} */}
+						{dams.map((lat) => {
+							console.log(dam);
+							return (
+								<Marker
+									position={{ lat: parseFloat(lat), lng: parseFloat(lng) }}
+									key={item}
+								/>
+							);
+						})}
 					</GoogleMap>
 				</Box>
 
