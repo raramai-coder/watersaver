@@ -1,0 +1,81 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  input,
+  textarea,
+  select {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+    box-shadow: 0 0 3px #800080;
+  }
+  
+  input[type="submit"] {
+    background-color: #800080;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #6b006b;
+  }
+  
+  input[type='text'],
+  input[type='tel'],
+  textarea,
+  select {
+    border: 2px solid #6b5b95;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    color: #6b5b95;
+  }
+  
+  input[type='text']:focus,
+  input[type='tel']:focus,
+  textarea:focus,
+  select:focus {
+    border: 2px solid #9b4dca;
+    color: #9b4dca;
+  }
+  
+  input[type='text']::placeholder,
+  input[type='tel']::placeholder,
+  textarea::placeholder {
+    color: #6b5b95;
+  }
+  .report-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
