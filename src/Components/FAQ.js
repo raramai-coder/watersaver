@@ -108,14 +108,19 @@ const FAQ = () => {
       },
   ];
 
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleClick = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  }
+
 
   return (
     <div>
       {faqs.map((faq, index) => (
         <div key={index} id="qBlock">
-          <h2>{faq.question}  </h2>
-         
-          {(
+          <h2 onClick={() => handleClick(index)}>{faq.question}</h2>
+          {activeIndex === index && (
             <ul>
               {faq.answers.map((answer, i) => (
                 <li key={i}>{answer}</li>
