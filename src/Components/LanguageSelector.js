@@ -1,4 +1,4 @@
-// import React, { useState } from 'react';
+import React, { useState } from 'react';
 // import { makeStyles } from '@material-ui/core/styles';
 // import FormControl from '@material-ui/core/FormControl';
 // import InputLabel from '@material-ui/core/InputLabel';
@@ -39,6 +39,11 @@
 //       </Select>
 //     </FormControl>
 //   );
-// }
+//}
 
-// export default LanguageSelector;
+function LanguageSelector() {
+	return <div>This is the Language page!</div>;
+}
+
+
+export default LanguageSelector;
