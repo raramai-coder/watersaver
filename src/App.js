@@ -4,7 +4,7 @@ import Home from "./Components/Home";
 import FAQ from "./Components/FAQ";
 import Report from "./Components/Report";
 import Levels from "./Components/Levels";
-import USSD from "./Components/ussd";
+import LanguageSelector from "./Components/LanguageSelector";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -19,7 +19,7 @@ function App() {
 				<Route path="faq" element={<FAQ />}></Route>
 				<Route path="report" element={<Report />}></Route>
 				<Route path="levels" element={<Levels />}></Route>
-				<Route path="ussd" element={<USSD />}></Route>
+				<Route path="language" element={<LanguageSelector />}></Route>
 			</Routes>
 		</>
 	);

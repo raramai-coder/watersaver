@@ -18,7 +18,7 @@ function Navbar() {
 				<NavLink to="/levels">Levels</NavLink>
 				<NavLink to="/faq">FAQ</NavLink>
 				<NavLink to="/report">Report</NavLink>
-				<NavLink to="/USSD">USSD</NavLink>
+				<NavLink to="/language">Language Selector</NavLink>
 				<button className="nav-btn nav-close-btn">
 					<FaTimes onClick={showNavbar} />
 				</button>
