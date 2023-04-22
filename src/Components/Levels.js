@@ -14,34 +14,33 @@ const center = {
 	lng: 28.354841696486154,
 };
 
+
 const libraries = ["places"];
 
 function Levels() {
+	const [selectedDam, setSelectedDam] = useState(null);
+
 	const [dams, setDams] = useState([]);
 
 	const getCsvData = async () => {
-		Papa.parse(await fetchCsv(), {
-			header: true,
-			skipEmptyLines: true,
-			complete: function (result) {
-				//console.log(result.data);
-				const copyData = [];
-				const dam = {
-					Dam: result.data.Dam,
-					Level: result.data.Level,
-					lat: result.data.lat,
-					lng: result.data.lng,
-				};
-				copyData.push(dam);
-				//setDams(result.data);
-				setDams(copyData);
-				console.log(dams);
-				//dams.append(result);
-				//dams = result;
-				//console.log(dams);
-			},
+		const csv = await fetchCsv();
+		const results = Papa.parse(csv, {
+		  header: true,
+		  skipEmptyLines: true,
 		});
-	};
+		const copyData = results.data.map((result) => ({
+		  Dam: result.Dam,
+		  Level: result.Level,
+		  lat: result.lat,
+		  lng: result.lng,
+		  Lastweek: result.Lastweek,
+		  LastYear: result.LastYear
+
+
+		}));
+		setDams(copyData);
+	  };
+	  
 
 	const fetchCsv = async () => {
 		const response = await fetch("../Data/DemoDamLevels.csv");
@@ -80,29 +79,33 @@ function Levels() {
 								position={{ lat: parseFloat(lat), lng: parseFloat(lng) }}
 							/>
 						))} */}
-						{dams.map((lat) => {
-							console.log(dam);
-							return (
-								<Marker
-									position={{ lat: parseFloat(lat), lng: parseFloat(lng) }}
-									key={item}
-								/>
-							);
-						})}
+						{dams.map((dam) => (
+  <Marker
+  key={dam.Dam}
+    position={{ lat: parseFloat(dam.lat), lng: parseFloat(dam.lng) }}
+	onClick={() => setSelectedDam(dam)}
+
+  />
+))}
+
 					</GoogleMap>
 				</Box>
 
+				
 				<div className="info-area">
-					<h2>Berg River</h2>
-					<p className="info-text-highlight">Storage Level: 79.57%</p>
-					<p>Last Week: 79.57%</p>
-					<p>Last Year: 25.44%</p>
-					<p>Reading Date: 10/3/2023</p>
-
-					<Autocomplete>
-						<Input type="text" placeholder="Search for Dam"></Input>
-					</Autocomplete>
-				</div>
+        {selectedDam && (
+          <>
+            <h2>{selectedDam.Dam}</h2>
+            <p className="info-text-highlight">Storage Level: {selectedDam.Level}%</p>
+            <p>Last Week: {selectedDam.Lastweek}%</p>
+            <p>Last Year: {selectedDam.LastYear}%</p>
+            <p>Reading Date: 10/3/2023</p>
+          </>
+        )}
+        <Autocomplete>
+          <Input type="text" placeholder="Search for Dam" />
+        </Autocomplete>
+		</div>
 			</div>
 		</main>
 	);
